@@ -22,7 +22,6 @@
 (deftest test-chan->pull
   (async done
          (let [ch (chan)
-               take-count (atom 0)
                source (chan->pull ch)
                vals [1 2 3 4 5 6 7 8 9]
                sink (. pull (collect (fn [err actual]
@@ -44,6 +43,21 @@
             )
            (pull source sink)
            )))
+
+(deftest test-timing-chan->pull
+  (async done
+         (let [ch (chan)
+               source (chan->pull ch)
+               sink (. pull (collect (fn [err vs]
+                                       (is (= (js->clj vs) [1 2 3 4]))
+                                       (done))))]
+           (pull source sink)
+           (go (>! ch 1)
+               (<! (timeout 100))
+               (>! ch 4)
+               (close! ch))
+           (go (>! ch 2)
+               (>! ch 3)))))
 
 (deftest test-chan->pull->chan
   (async done
