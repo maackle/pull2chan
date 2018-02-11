@@ -62,4 +62,4 @@ See the [tests](./test/pull2chan/tests.cljs) for a few more examples
 1. Run `[rlwrap] lein figwheel devserver` in one session
 2. Run `node target/devserver.js` in another
 
-To run tests (with hot reloading), replace step 1 with `[rlwrap] lein figwheel test devserver`
+To run tests with hot reloading: `lein doo node test`

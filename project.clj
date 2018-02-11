@@ -1,6 +1,6 @@
-(defproject pull2chan "0.1.0-SNAPSHOT"
-  :description "FIXME: write this!"
-  :url "http://example.com/FIXME"
+(defproject pull2chan "0.1.0"
+  :description "Convert between ClojureScript core.async channels and pull-streams, preserving backpressure"
+  :url "https://github.com/maackle/pull-cljs-channel"
 
   :min-lein-version "2.7.1"
 
