@@ -1,7 +1,11 @@
-pull-cljs-channel
+pull2chan
 =================
 
 Seamlessly convert between [pull-stream](https://github.com/pull-stream/pull-stream) sources and ClojureScript core.async channels, preserving backpressure
+
+## Installation
+
+Add `[maackle/pull2chan "0.1.0"]` to your project.clj `:dependencies`
 
 ## Examples
 
