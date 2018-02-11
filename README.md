@@ -9,9 +9,9 @@ Imports at top of file:
 
 ```cljs
 (ns example
-  (:require [cljs.core.async :refer (chan)]
+  (:require [cljs.core.async :refer (chan <! >! close!)]
             [pull2chan.core :refer (pull->chan chan->pull)])
-  (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
+  (:require-macros [cljs.core.async.macros :refer [go]]))
 
 (def pull (js/require "pull-stream"))
 ```
@@ -24,7 +24,8 @@ Imports at top of file:
   (go (println (<! ch)) ; output: 1
       (println (<! ch)) ; output: 2
       (println (<! ch)) ; output: 3
-      (println (<! ch)) ; output: nil (channel is closed after being drained)
+      (println (<! ch)) ; output: nil (channel is closed after source is depleted)
+      (println (<! ch)) ; output: nil (still closed...)
       ))
 ```
 
