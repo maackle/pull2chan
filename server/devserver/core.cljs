@@ -1,4 +1,4 @@
-(ns ^:figwheel-always fig.core
+(ns ^:figwheel-always devserver.core
   (:require [cljs.nodejs :as nodejs]))
 (nodejs/enable-util-print!)
 (println "Hello from the Node!")

@@ -26,13 +26,13 @@
                                    :target :nodejs
                                    :optimizations :none
                                    }}
-                       {:id "fig"
-                        :source-paths ["test" "src"]
+                       {:id "devserver"
+                        :source-paths ["server" "test" "src"]
                         :figwheel true
                         :compiler {
-                                   :main fig.core
-                                   :output-to "target/fig.js"
-                                   :output-dir "target/fig"
+                                   :main devserver.core
+                                   :output-to "target/devserver.js"
+                                   :output-dir "target/devserver"
                                    :target :nodejs
                                    :optimizations :none
                                    }}

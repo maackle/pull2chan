@@ -3,7 +3,7 @@ pull-cljs-channel
 
 Seamlessly convert between [pull-stream](https://github.com/pull-stream/pull-stream) sources and ClojureScript core.async channels, preserving backpressure
 
-## Example
+## Examples
 
 Imports at top of file:
 
@@ -16,7 +16,7 @@ Imports at top of file:
 (def pull (js/require "pull-stream"))
 ```
 
-pull-stream -> channel
+### pull-stream -> channel
 
 ```cljs
 (let [source (. pull (values #js [1 2 3]))
@@ -28,7 +28,7 @@ pull-stream -> channel
       ))
 ```
 
-channel -> pull-stream
+### channel -> pull-stream
 
 ```cljs
 (let [ch (chan)
@@ -50,4 +50,15 @@ channel -> pull-stream
 ; done
 ```
 
+### channel -> pull-stream -> channel -> pull-stream -> channel
+
+Yes, you can go back and forth as much as you want!
+
 See the [tests](./test/pull2chan/tests.cljs) for a few more examples
+
+## Development
+
+1. Run `[rlwrap] lein figwheel devserver` in one session
+2. Run `node target/devserver.js` in another
+
+To run tests (with hot reloading), replace step 1 with `[rlwrap] lein figwheel test devserver`
