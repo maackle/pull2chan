@@ -10,7 +10,8 @@
                  [funcool/struct "1.2.0"]]
 
   :plugins [[lein-cljsbuild "1.1.7" :exclusions [[org.clojure/clojure]]]
-            [lein-figwheel "0.5.13"]]
+            [lein-figwheel "0.5.13"]
+            [lein-doo "0.1.7"]]
 
   :source-paths ["src"]
 

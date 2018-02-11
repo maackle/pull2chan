@@ -15,8 +15,8 @@
                     (put! ch val
                           #(if %
                              (source nil read)
-                             (close! ch)))))
-                 ))
+                             (close! ch)
+                             ))))))
    ch
    ))
 
